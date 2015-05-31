@@ -1,0 +1,239 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Building JavaScript Applications
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section(data-bespoke-backdrop='tasty__intro', data-bespoke-hash='welcome')
+
+      section(data-bespoke-hash='speaker')
+        h2 About me
+        pre(class='code--medium')
+          code.language-javascript.
+            var speaker = {
+              name: 'Marcos Alejandro Gallardo',
+              role: 'Front End Developer'
+            };
+
+      section(data-bespoke-hash='intro')
+        h1 Building JavaScript Applications
+
+      section(data-bespoke-hash='spa?')
+        h2 Single-page Application
+        h3(class='bullet font__color--secondary') What is a SPA?
+        ul
+          li
+            div(class='block')
+              | Is a web application that fits on a single web page.<br />
+              | All necessary code is retrieved with a single page load.<br />
+              | The appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions.
+
+      section(data-bespoke-hash='architecture')
+        h2 Architecture
+        h3(class='bullet font__color--secondary') How do you structure your application?
+        ul
+          li A pattern is a reusable solution that can be applied to commonly occurring problems in software design.
+          li Another way of looking at patterns is as templates for how we solve problems.
+          li
+            div(class='block')
+              | The most commonly used on the client-side is <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> pattern
+
+
+      section(data-bespoke-hash='mvc')
+        h3 Model-View-Controller
+        div(class='block')
+          ul
+            li MVC offers architectural benefits over standard JavaScript, usch as:
+            li Easier overall maintenance.
+            li Separation of Concerns.
+            li Low-level duplication.
+
+      section(data-bespoke-hash='mvc-model')
+        h3 <span class='bullet font__color--secondary'>Model</span>-View-Controller
+        ul
+          li
+            div(class='block')
+              | Models manage the data for an application.
+              | They are concerned with neither the user-interface nor presentation layers but instead represent unique forms of data that an application may require.
+
+      section(data-bespoke-hash='mvc-model-example')
+        pre(class='code--medium')
+          code.language-javascript.
+            var PhotoModel = Backbone.Model.extend({
+              // Default attributes for the photo
+              defaults: {
+                src: "placeholder.jpg",
+                caption: "A default image",
+                viewed: false
+              },
+
+              // Ensure that each photo created has an `src`.
+              initialize: function() {
+                 this.set( { "src": this.defaults.src} );
+              }
+            });
+
+      section(data-bespoke-hash='mvc-view')
+        h3 Model-<span class='bullet font__color--secondary'>View</span>-Controller
+        ul
+          li
+            div(class='block')
+              | Views are a visual representation of models that present a filtered view of their current state.
+              | A view typically observes a model and is notified when the model changes, allowing the view to update itself accordingly.
+
+      section(data-bespoke-hash='mvc-view-example')
+        pre(class='code--medium')
+          code.language-javascript.
+            var PhotoView = Backbone.View.extend({
+              tagName: 'li',
+              className: 'photo',
+
+              initialize: function() {
+                this.listenTo(this.model, 'change', this.render);
+              },
+
+              render: function() {
+                this.$el.html(this.template(this.model.toJSON()));
+                return this;
+              }
+            });
+
+      section(data-bespoke-hash='mvc-view-template')
+        pre(class='code--medium')
+          code.language-markup.
+            &lt;h2&gt;{{caption}}&lt;/h2&gt;
+            &lt;img class="source" src="{{src}}"/&gt;
+            &lt;div class="meta-data"&gt;
+              {{metadata}}
+            &lt;/div&gt;
+
+      section(data-bespoke-hash='mvc-controller')
+        h3 Model-View-<span class='bullet font__color--secondary'>Controller</span>
+        ul
+          li
+            div(class='block')
+              | Controllers are intermediaries between models and views, which are classically responsible for updating the model when the user manipulates the view.
+
+      section(data-bespoke-hash='mvc-controller-example')
+        pre(class='code--medium')
+          code.language-javascript.
+            var PhotoRouter = Backbone.Router.extend({
+              routes: { "photos/:id": "route" },
+             
+              route: function( id ) {
+                var item = new PhotoModel();
+                var view = new PhotoView( { model: item } );
+             
+                $('.content').html( view.render().el );
+              }
+            });
+
+      section(data-bespoke-hash='mvc-representation')
+        div(class='block')
+          img(src='images/mvc.png')
+
+      section(data-bespoke-hash='code-organization')
+        h2 Code Organization
+        h3(class='font__color--secondary') How do you organize your code?
+
+      section(data-bespoke-hash='structure-basic')
+        h3 All in One
+        p(class='font__color--secondary') Start by having one file for every type of object we need.
+        div(class='block')
+          img(src='images/oneForAll.png')
+
+      section(data-bespoke-hash='structure-basic-what?')
+        img(src='http://i.minus.com/ibhuJkUWoMPoeG.gif')
+
+      section(data-bespoke-hash='structure-by-type')
+        h3 By Type
+        p(class='font__color--secondary') Split objects on their one file and group them by type in a folder.
+        div(class='block')
+          img(src='images/byType.png')
+
+      section(data-bespoke-hash='questions')
+        h3(class='bullet') Questions
+        ul
+          li How much functionality is instantly <em class="font__color--secondary">re-usable</em>?
+          li How easy is <em class="font__color--secondary">test</em> a functionality? (independent)
+          li How simple is <em class="font__color--secondary">change/remove</em> a feature without break others? (decoupled)
+          li How painless is <em class="font__color--secondary">debug</em> a feature?
+
+      section(data-bespoke-hash='structure-by-type-what?')
+        img(src='http://i.imgur.com/Gs5BJje.gif')
+
+      section(data-bespoke-hash='brainstorm')
+        h2 Brainstorm
+        img(src='http://media1.giphy.com/media/uzZh2psw4J3ri/200.gif')
+
+      section(data-bespoke-hash='structure-by-feature')
+        h3 By Feature
+        div(class='block')
+          img(src='images/byFeature.png')
+
+      section(data-bespoke-hash='modularized')
+        h3 Let's call it <span class='font__color--secondary'>modularized</span>.
+
+      section(data-bespoke-hash='modules?')
+        h3(class='bullet') Ok, but, what is a module?
+        div(class='bullet block') Is an independent unit of functionality that is part of the total structure of a web application.
+
+      section(data-bespoke-hash='modules')
+        img(src='/images/modules.png' style='width: 100%')
+
+      section(data-bespoke-hash='module-1')
+        img(src='/images/module-1.png')
+
+      section(data-bespoke-hash='module-2')
+        img(src='/images/module-2.png')
+
+      section(data-bespoke-hash='modules-folder')
+        h3 The modules folder
+        div(class='block')
+          | Each module here will resemble a mini-MVC application by having a view, controller and potentially models file(s).
+          | If the module has multiple related views, it may be a good idea to further separate these files into ‘views’, ‘controllers’, ‘models’ subfolders.
+
+      section(data-bespoke-hash='modules-benefits')
+        h3(class='bullet') The benefits of modularized approach include:
+        ul
+          li Provides a specific feature (<span class='font__color--secondary'>Code Maintainability</span>).
+          li Decoupled and reusable (<span class='font__color--secondary'>Scalable</span>).
+          li Debugging.
+          li Testing.
+
+      section(data-bespoke-hash='modules-rules')
+        h2(class='bullet') Modules rules
+        ul
+          li Never access the DOM outside the module.
+          li Don't create global variables.
+          li Don't access non-native global objects.
+          li Don't directly reference other modules.
+
+      section(data-bespoke-hash='remember')
+        h2 Remember...
+
+      section(data-bespoke-hash='quote-1')
+        div(class='block quote')
+          p " The more tied components are to each other, the less reusable they will be, and the more difficult it becomes to make changes to one without accidentally affecting another."
+          strong - Rebecca Murphey, author of jQuery Fundamentals
+
+      section(data-bespoke-hash='quote-2')
+        div(class='block quote')
+          p " The key is to acknowledge from the start that you have no idea how this will grow. When you accept that you don't know everything, you begin to design the system defensively."
+          strong - Nicholas Zakas, author 'High-performance JavaScript websites'
+
+      section(data-bespoke-hash='quote-3')
+        div(class='block quote')
+          p " The secret to building large apps is never build large apps. Break your applications into small pieces. Then, assemble those testable, bite-sized pieces into your big application."
+          strong - Justin Meyer, author JavaScriptMVC
+
+      section(data-bespoke-backdrop='tasty__end', data-bespoke-hash='end')
+
+    script(src='build/build.js')

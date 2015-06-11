@@ -1,5 +1,9 @@
 {
-  "name": "presentation-scalable-javascript-application",
+  "name": "Building JavaScript Applications",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marcosgallardo/tasty-presentation.git"
+  },
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Building Large JavaScript Applications</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-backdrop="tasty__intro" data-bespoke-hash="welcome"></section>
+      <section data-bespoke-hash="speaker">
+        <h2>About me</h2>
+        <pre class="code--medium"><code class="language-javascript">var speaker = {
+  name: 'Marcos Alejandro Gallardo',
+  role: 'Front End Developer'
+};
+</code></pre>
+      </section>
+      <section data-bespoke-hash="intro">
+        <h1 class="bullet">Building Large JavaScript Applications</h1>
+      </section>
+      <section data-bespoke-hash="foundations" class="foundations"><img src="https://fearmastery.files.wordpress.com/2014/01/weak-foundations-2.jpg">
+        <h1 class="bullet">Foundations</h1>
+      </section>
+      <section data-bespoke-hash="why?">
+        <h3 class="bullet">Why we build an application?</h3>
+        <h2 class="bullet">To provide our costumers value</h2>
+      </section>
+      <section data-bespoke-hash="value-measure">
+        <h3 class="bullet">How that value can be measured?</h3>
+        <ul>
+          <li>
+            <h2>Design</h2>
+          </li>
+          <li>
+            <h2>User experience</h2>
+          </li>
+          <li>
+            <h2>Performance</h2>
+          </li>
+          <li>
+            <h2>Scalability</h2>
+          </li>
+          <li>
+            <h2>Optimization</h2>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="realy?">
+        <div class="block"><img src="http://media.topito.com/wp-content/uploads/2013/01/code-31.gif"></div>
+      </section>
+      <section data-bespoke-hash="where-do-we-start?">
+        <h2>Where do we start?</h2>
+      </section>
+      <section data-bespoke-hash="spa?">
+        <h2 class="bullet">Single-page Application</h2>
+        <h3 class="bullet">What is a SPA?</h3>
+        <ul>
+          <li>Is a web application that fits on a single web page</li>
+          <li>All necessary code is retrieved with a single page load</li>
+          <li>Dynamically new resources are loaded and added to the page</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="architecture">
+        <h2 class="bullet">Architecture</h2>
+        <h3 class="bullet">How do we structure your application?</h3>
+        <h2 class="bullet">We need a pattern</h2>
+      </section>
+      <section data-bespoke-hash="pattern?">
+        <h2>Architecture</h2>
+        <h3 class="bullet">What is a pattern?</h3>
+        <ul>
+          <li>Is a reusable solution that can be applied to commonly occurring problems in software design</li>
+          <li>Another way of looking at patterns is as <span class="font__color--secondary">templates for how solve problems</span></li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="what-do-you-want?">
+        <h3 class="bullet">What do we want?</h3>
+        <ul>
+          <li>
+            <h3>JavaScript</h3>
+          </li>
+          <li>
+            <h2>Maintainable</h2>
+          </li>
+          <li>
+            <h2>Scalable</h2>
+          </li>
+          <li>
+            <h2>Testable</h2>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="lets-say-so">
+        <div class="block"><img src="http://38.media.tumblr.com/d0d80832b4eb32e06deb46d1d1d774f0/tumblr_inline_nmpwjlVg201raprkq_500.gif"></div>
+      </section>
+      <section data-bespoke-hash="mv*">
+        <h2 class="bullet font__color--secondary">MV*</h2>
+        <h3 class="bullet">Everyone has a different <span class="font__color--secondary">taste</span></h3>
+      </section>
+      <section data-bespoke-hash="mvc">
+        <h2 class="bullet font__color--secondary">MVC</h2>
+        <ul>
+          <li><span class="font__color--secondary">M</span>odel === <span class="font__color--secondary">DATA</span></li>
+          <li><span class="font__color--secondary">V</span>iew === <span class="font__color--secondary">DOM</span></li>
+          <li><span class="font__color--secondary">C</span>ontroller === <span class="font__color--secondary">Glue</span></li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="mvc-flow">
+        <div class="block"><img src="https://www.safaribooksonline.com/library/view/learning-javascript-design/9781449334840/httpatomoreillycomsourceoreillyimages1326894.png"></div>
+      </section>
+      <section data-bespoke-hash="foundation">
+        <h2 class="bullet font__color--secondary">Foundation</h2>
+        <h3 class="bullet">Let choose our <span class="font__color--secondary">MV*</span> library/framework</h3>
+        <ul>
+          <li>Angular</li>
+          <li>Backbone</li>
+          <li>Ember</li>
+          <li>Knockout</li>
+          <li>React</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="not-enough">
+        <h3 class="bullet">However...</h3>
+        <h2 class="bullet">This is not enough</h2>
+      </section>
+      <section data-bespoke-hash="come-on!">
+        <div class="block"><img src="http://33.media.tumblr.com/c6e791c1c80a953da66785706d795994/tumblr_inline_no7ok7qXHz1raprkq_500.gif"></div>
+      </section>
+      <section data-bespoke-hash="code-organization">
+        <h2 class="bullet">Code Organization</h2>
+        <h3 class="bullet">How do we organize our code?</h3>
+      </section>
+      <section data-bespoke-hash="structure-basic">
+        <h3>All in <span class='font__color--secondary'>One</span></h3>
+        <p>Have one file for every type of object we need.</p>
+        <div class="block"><img src="images/oneForAll.png"></div>
+      </section>
+      <section data-bespoke-hash="structure-basic-what?"><img src="http://i.minus.com/ibhuJkUWoMPoeG.gif"></section>
+      <section data-bespoke-hash="structure-by-type">
+        <h3>By <span class='font__color--secondary'>Type</span></h3>
+        <p>Split objects on their one file and group them by type in a folder.</p>
+        <div class="block"><img src="images/byType.png"></div>
+      </section>
+      <section data-bespoke-hash="ask-yourself">
+        <h2 class="bullet">Ask ourself...</h2>
+        <ul>
+          <li>How much functionality is instantly <span class="font__color--secondary">re-usable</span>?</li>
+          <li>How easy is <span class="font__color--secondary">test</span> a functionality? (independent)</li>
+          <li>How simple is <span class="font__color--secondary">change/remove</span> a feature without break others? (decoupled)</li>
+          <li>How painless is <span class="font__color--secondary">fix</span> a feature?</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="structure-by-type-what?"><img src="http://i.imgur.com/Gs5BJje.gif"></section>
+      <section data-bespoke-hash="brainstorm">
+        <h2>Brainstorm</h2><img src="http://media1.giphy.com/media/uzZh2psw4J3ri/200.gif">
+      </section>
+      <section data-bespoke-hash="structure-by-feature">
+        <h3>By <span class='font__color--secondary'>Feature</span></h3>
+        <div class="block"><img src="images/byFeature.png"></div>
+      </section>
+      <section data-bespoke-hash="call-them-modules">
+        <h3 class="bullet">Let's call them</h3>
+        <h2 class="bullet font__color--secondary">modules</h2>
+      </section>
+      <section data-bespoke-hash="what-are-modules">
+        <h3 class="bullet">Ok, but...</h3>
+        <h2 class="bullet">What is a module?</h2>
+        <p class="bullet">Is an independent unit of functionality that is part of the total structure of a web application.</p>
+      </section>
+      <section data-bespoke-hash="app-modularized"><img src="/images/modules.png" style="width: 100%"></section>
+      <section data-bespoke-hash="module-1"><img src="/images/module-1.png"></section>
+      <section data-bespoke-hash="module-2"><img src="/images/module-2.png"></section>
+      <section data-bespoke-hash="modules">
+        <h3 class="bullet">Modules are</h3>
+        <ul>
+          <li>
+            <h2>Focused</h2>
+          </li>
+          <li>
+            <h2>Decoupled</h2>
+          </li>
+          <li>
+            <h2>Reusable</h2>
+          </li>
+          <li>
+            <h2>Testable</h2>
+          </li>
+          <li>
+            <h2><span>and contains</span> Business Logic</h2>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="modules-rules">
+        <h3 class="bullet">Modules rules</h3>
+        <ul>
+          <li>
+            <h3 class="font__color--secondary uppercase">Never access the DOM outside the module.</h3>
+          </li>
+          <li>
+            <h3 class="font__color--secondary uppercase">Don't create global variables.</h3>
+          </li>
+          <li>
+            <h3 class="font__color--secondary uppercase">Don't access non-native global objects.</h3>
+          </li>
+          <li>
+            <h3 class="font__color--secondary uppercase">Don't directly reference other modules outside off it.</h3>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="remember">
+        <h2>Remember...</h2>
+      </section>
+      <section data-bespoke-hash="quote-1">
+        <div class="block quote">
+          <p>" The more tied components are to each other, the less reusable they will be, and the more difficult it becomes to make changes to one without accidentally affecting another."</p><strong>- Rebecca Murphey, author of jQuery Fundamentals</strong>
+        </div>
+      </section>
+      <section data-bespoke-hash="quote-2">
+        <div class="block quote">
+          <p>" The key is to acknowledge from the start that you have no idea how this will grow. When you accept that you don't know everything, you begin to design the system defensively."</p><strong>- Nicholas Zakas, author 'High-performance JavaScript websites'</strong>
+        </div>
+      </section>
+      <section data-bespoke-hash="quote-3">
+        <div class="block quote">
+          <p>" The secret to building large apps is never build large apps. Break your applications into small pieces. Then, assemble those testable, bite-sized pieces into your big application."</p><strong>- Justin Meyer, author JavaScriptMVC</strong>
+        </div>
+      </section>
+      <section data-bespoke-backdrop="the_end" data-bespoke-hash="end"></section>
+      <section data-bespoke-backdrop="tasty__end" data-bespoke-hash="bye"></section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>

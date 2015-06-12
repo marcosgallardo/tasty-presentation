@@ -23,23 +23,36 @@ html
             };
 
       section(data-bespoke-hash='intro')
-        h1 Building Large JavaScript Applications
+        h1(class='bullet') Building Large JavaScript Applications
+
+      section(data-bespoke-hash='foundations', class='foundations')
+        img(src='https://fearmastery.files.wordpress.com/2014/01/weak-foundations-2.jpg')
+        h1(class='bullet') Foundations
 
       section(data-bespoke-hash='why?')
         h3(class='bullet') Why we build an application?
         h2(class='bullet') To provide our costumers value
 
-      section(data-bespoke-hash='how?')
+      section(data-bespoke-hash='value-measure')
         h3(class='bullet') How that value can be measured?
-        h2(class='bullet') Design
-        h2(class='bullet') User experience
-        h2(class='bullet') Performance
-        h2(class='bullet') Scalability
-        h2(class='bullet') Optimization
+        ul
+          li
+            h2 Design
+          li 
+            h2 User experience
+          li
+            h2 Performance
+          li
+            h2 Scalability
+          li
+            h2 Optimization
 
       section(data-bespoke-hash='realy?')
         div(class='block')
-          img(src='http://33.media.tumblr.com/c6e791c1c80a953da66785706d795994/tumblr_inline_no7ok7qXHz1raprkq_500.gif')
+          img(src='http://media.topito.com/wp-content/uploads/2013/01/code-31.gif')
+
+      section(data-bespoke-hash='where-do-we-start?')
+        h2 Where do we start?
 
       section(data-bespoke-hash='spa?')
         h2(class='bullet') Single-page Application
@@ -51,8 +64,8 @@ html
 
       section(data-bespoke-hash='architecture')
         h2(class='bullet') Architecture
-        h3(class='bullet') How do you structure your application?
-        h2(class='bullet') You adop a pattern
+        h3(class='bullet') How do we structure your application?
+        h2(class='bullet') We need a pattern
 
       section(data-bespoke-hash='pattern?')
         h2 Architecture
@@ -62,15 +75,24 @@ html
           li Another way of looking at patterns is as <span class="font__color--secondary">templates for how solve problems</span>
 
       section(data-bespoke-hash='what-do-you-want?')
-        h3(class='bullet') What do you want?
-        h3(class='bullet') JavaScript
-        h2(class='bullet') Testable
-        h2(class='bullet') Scalable
-        h2(class='bullet') Maintainable
+        h3(class='bullet') What do we want?
+        ul
+          li
+            h3 JavaScript
+          li
+            h2 Maintainable
+          li
+            h2 Scalable
+          li
+            h2 Testable
 
       section(data-bespoke-hash='lets-say-so')
         div(class='block')
           img(src='http://38.media.tumblr.com/d0d80832b4eb32e06deb46d1d1d774f0/tumblr_inline_nmpwjlVg201raprkq_500.gif')
+
+      section(data-bespoke-hash='mv*')
+        h2(class='bullet font__color--secondary') MV*
+        h3(class='bullet') Everyone has a different <span class="font__color--secondary">taste</span>
 
       section(data-bespoke-hash='mvc')
         h2(class='bullet font__color--secondary') MVC
@@ -79,17 +101,13 @@ html
           li <span class="font__color--secondary">V</span>iew === <span class="font__color--secondary">DOM</span>
           li <span class="font__color--secondary">C</span>ontroller === <span class="font__color--secondary">Glue</span>
 
-      section(data-bespoke-hash='mvc-i-love-you')
+      section(data-bespoke-hash='mvc-flow')
         div(class='block')
-          img(src='http://38.media.tumblr.com/28c234e45e157b55f923e109bbb9aa75/tumblr_inline_no7omriCW31raprkq_500.gif')
-
-      section(data-bespoke-hash='mv*')
-        h2(class='bullet font__color--secondary') MV*
-        h3(class='bullet') Everyone has a different <span class="font__color--secondary">taste</span>
+          img(src='https://www.safaribooksonline.com/library/view/learning-javascript-design/9781449334840/httpatomoreillycomsourceoreillyimages1326894.png')
 
       section(data-bespoke-hash='foundation')
         h2(class='bullet font__color--secondary') Foundation
-        h3(class='bullet') Choose your MV* library/framework
+        h3(class='bullet') Let choose our <span class="font__color--secondary">MV*</span> library/framework
         ul
           li Angular
           li Backbone
@@ -100,15 +118,15 @@ html
 
       section(data-bespoke-hash='not-enough')
         h3(class='bullet') However...
-        h2(class='bullet') MV* is not enough
+        h2(class='bullet') This is not enough
 
       section(data-bespoke-hash='come-on!')
         div(class='block')
-          img(src='http://media.topito.com/wp-content/uploads/2013/01/code-31.gif')
+          img(src='http://33.media.tumblr.com/c6e791c1c80a953da66785706d795994/tumblr_inline_no7ok7qXHz1raprkq_500.gif')
 
       section(data-bespoke-hash='code-organization')
         h2(class='bullet') Code Organization
-        h3(class='bullet') How do you organize your code?
+        h3(class='bullet') How do we organize our code?
 
       section(data-bespoke-hash='structure-basic')
         h3 All in <span class='font__color--secondary'>One</span>
@@ -126,12 +144,12 @@ html
           img(src='images/byType.png')
 
       section(data-bespoke-hash='ask-yourself')
-        h2(class='bullet') Ask yourself...
+        h2(class='bullet') Ask ourself...
         ul
           li How much functionality is instantly <span class="font__color--secondary">re-usable</span>?
           li How easy is <span class="font__color--secondary">test</span> a functionality? (independent)
           li How simple is <span class="font__color--secondary">change/remove</span> a feature without break others? (decoupled)
-          li How painless is <span class="font__color--secondary">debug</span> a feature?
+          li How painless is <span class="font__color--secondary">fix</span> a feature?
 
       section(data-bespoke-hash='structure-by-type-what?')
         img(src='http://i.imgur.com/Gs5BJje.gif')
@@ -154,14 +172,6 @@ html
         h2(class='bullet') What is a module?
         p(class='bullet') Is an independent unit of functionality that is part of the total structure of a web application.
 
-      section(data-bespoke-hash='modules')
-        h3(class='bullet') Modules are
-        h2(class='bullet') Focused
-        h2(class='bullet') Decoupled
-        h2(class='bullet') Reusable
-        h2(class='bullet') Testable
-        h2(class='bullet') <span>and contains</span> Business Logic
-
       section(data-bespoke-hash='app-modularized')
         img(src='/images/modules.png' style='width: 100%')
 
@@ -171,13 +181,31 @@ html
       section(data-bespoke-hash='module-2')
         img(src='/images/module-2.png')
 
-      section(data-bespoke-hash='modules-rules')
-        h2(class='bullet') Modules rules
+      section(data-bespoke-hash='modules')
+        h3(class='bullet') Modules are
         ul
-          li Never access the DOM outside the module.
-          li Don't create global variables.
-          li Don't access non-native global objects.
-          li Don't directly reference other modules.
+          li
+            h2 Focused
+          li
+            h2 Decoupled
+          li
+            h2 Reusable
+          li
+            h2 Testable
+          li
+            h2 <span>and contains</span> Business Logic
+
+      section(data-bespoke-hash='modules-rules')
+        h3(class='bullet') Modules rules
+        ul
+          li
+            h3(class='font__color--secondary uppercase') Never access the DOM outside the module.
+          li
+            h3(class='font__color--secondary uppercase') Don't create global variables.
+          li
+            h3(class='font__color--secondary uppercase') Don't access non-native global objects.
+          li
+            h3(class='font__color--secondary uppercase') Don't directly reference other modules outside off it.
 
       section(data-bespoke-hash='remember')
         h2 Remember...
